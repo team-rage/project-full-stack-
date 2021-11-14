@@ -4,6 +4,7 @@ import axios from "axios";
 export default function Movies() {
   const history = useHistory();
   const [data, setData] = useState([]);
+  const [searchArr, setSearchArr] = useState("");
 
   useEffect(async () => {
     // here is the change
@@ -15,11 +16,26 @@ export default function Movies() {
   const GoToMovie = (id) => {
     history.push(`/Movie/${id}`);
   };
-  // const search = (movies) => {
-  //   console.log(movies);
-  // };
+  const searchTarget = (e) => {
+    setSearchArr(e.target.value);
+  };
+  const search = (movies) => {
+    let search1 = movies.filter((elem, i) => {
+      if (elem.name.toLowerCase().includes(searchArr.toLocaleLowerCase())) {
+        return elem;
+      }
+    });
+    return search1;
+  };
   return (
     <div>
+      <input
+        placeholder="search"
+        onChange={(e) => {
+          searchTarget(e);
+        }}
+      />
+      <button onClick={()=>{search()}}>search</button>
       {data.map((elem) => {
         return (
           <div
@@ -27,13 +43,6 @@ export default function Movies() {
               GoToMovie(elem.id);
             }}
           >
-            {/* <input
-              placeholder="search"
-              onChange={(movies) => {
-                search();
-              }}
-            /> */}
-
             <p>{elem.name}</p>
             {/* <p>{elem.date}</p>
             <p>{elem.description}</p> */}
