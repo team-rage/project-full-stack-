@@ -5,6 +5,7 @@ app.use(express.json());
 app.use(cors());
 const movies = [
   {
+    id: 1,
     name: "JohnWick",
     Date: 2014,
     description:
@@ -12,6 +13,7 @@ const movies = [
     url: "https://upload.wikimedia.org/wikipedia/ar/7/77/%D9%81%D9%8A%D9%84%D9%85_%D8%AC%D9%88%D9%86_%D9%88%D9%8A%D9%83.jpg",
   },
   {
+    id: 2,
     name: "Bloodshot",
     Date: 2020,
     description:
@@ -19,6 +21,7 @@ const movies = [
     url: "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Far%2F2%2F28%2FX-Large_movie.jpg",
   },
   {
+    id: 3,
     name: "NARUTO",
     Date: 1999,
     description:
@@ -26,6 +29,7 @@ const movies = [
     url: "https://2u.pw/n0Xr8",
   },
   {
+    id: 4,
     name: "War for the Planet of the Apes",
     Date: 2017,
     description:
@@ -33,6 +37,7 @@ const movies = [
     url: "https://upload.wikimedia.org/wikipedia/ar/3/36/%D8%AD%D8%B1%D8%A8_%D9%84%D8%A3%D8%AC%D9%84_%D9%83%D9%88%D9%83%D8%A8_%D8%A7%D9%84%D9%82%D8%B1%D8%AF%D8%A9.jpg",
   },
   {
+    id: 5,
     name: "Aşk-ı Memnu",
     Date: 2008,
     description:
@@ -40,6 +45,7 @@ const movies = [
     url: "https://upload.wikimedia.org/wikipedia/ar/0/0e/A%C5%9Fk-%C4%B1_Memnu_%28TV_series%29.jpg",
   },
   {
+    id: 6,
     name: " x lrge ",
     Date: 2011,
     description:
@@ -47,6 +53,7 @@ const movies = [
     url: "https://upload.wikimedia.org/wikipedia/ar/2/28/X-Large_movie.jpg",
   },
   {
+    id: 7,
     name: " one pice  ",
     Date: 1997,
     description:
@@ -54,6 +61,7 @@ const movies = [
     url: "https://upload.wikimedia.org/wikipedia/ar/9/90/One_Piece%2C_Volume_61_Cover_%28Japanese%29.jpg",
   },
   {
+    id: 8,
     name: "Dragon Ball",
     Date: 1984,
     description:
@@ -61,6 +69,7 @@ const movies = [
     url: "https://cdn.vox-cdn.com/thumbor/nwvCgEEsVPtb4fUpoQ2bys6DMYc=/0x0:1600x959/1200x800/filters:focal(670x165:926x421)/cdn.vox-cdn.com/uploads/chorus_image/image/69260607/FunFilms_DBSBroly_Landing.0.jpg",
   },
   {
+    id: 0,
     name: "BLEACH",
     Date: 2001,
     description:
@@ -82,6 +91,15 @@ app.get("/movies", (req, res) => {
   res.status(200);
   res.json(movies);
 });
+app.get("/movies/:id", (req, res) => {
+  const id = req.params.id;
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].id == id) {
+      res.status(200);
+      res.json(movies[i]);
+    }
+  }
+});
 app.delete("/movies/:name", (req, res) => {
   const remove = req.params.name;
   for (let i = 0; i < movies.length; i++) {
@@ -96,4 +114,3 @@ const port = 5000;
 app.listen(port, () => {
   console.log("server is running");
 });
-
