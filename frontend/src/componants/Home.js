@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./style.css"
 export default function Home() {
   const [movies, setmovies] = useState([]);
   useEffect(async () => {
@@ -10,7 +11,12 @@ export default function Home() {
   }, []);
   return (
     <div>
+     {/* pifgp[ok] */}
+      <div  className="title">
       <h1>Welcome to Web Movies</h1>
+      <hr />
+      </div>
+      
       {movies.map((elem, i) => {
         return (
           <div key={i}>

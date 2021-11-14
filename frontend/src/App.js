@@ -3,7 +3,7 @@ function App() {
   return (
     <>
       <Home />
-      <h1>Hello World</h1>
+     
     </>
   );
 }
