@@ -15,6 +15,9 @@ export default function Movies() {
   const GoToMovie = (id) => {
     history.push(`/Movie/${id}`);
   };
+  // const search = (movies) => {
+  //   console.log(movies);
+  // };
   return (
     <div>
       {data.map((elem) => {
@@ -24,7 +27,17 @@ export default function Movies() {
               GoToMovie(elem.id);
             }}
           >
-            <h1>{elem.name}</h1>
+            {/* <input
+              placeholder="search"
+              onChange={(movies) => {
+                search();
+              }}
+            /> */}
+
+            <p>{elem.name}</p>
+            {/* <p>{elem.date}</p>
+            <p>{elem.description}</p> */}
+            <img src={elem.url} />
           </div>
         );
       })}
