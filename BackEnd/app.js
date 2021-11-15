@@ -14,11 +14,11 @@ const movies = [
   },
   {
     id: 2,
-    name: "Bloodshot",
-    Date: 2020,
+    name: "house of cards",
+    Date: 2013,
     description:
-      "After his success in leading a successful and successful success in Mombasa, leading to the success of his illness, mercenaries led by Martin, find out the source of Edessa in Mombasa. Including stated information: Martin X killed him. He sends her answer in return, and she may be in return, and she tries to communicate with others.",
-    url: "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Far%2F2%2F28%2FX-Large_movie.jpg",
+      "An American political drama series developed and produced by Beau Willimon and based on the British series of the same name, which in turn is based on a novel by Michael Dobbs. The series has been broadcast on Netflix since February 1, 2013, with its first season consisting of 13 episodes. Season two was released on February 4, 2014. Ten days before the second season aired, Netflix announced that the series had been renewed for a third season, which was released on February 27, 2015. House of Cards was renewed for a fourth season that premiered on March 4, 2016, and a fifth season that premiered on May 30, 2017.",
+    url: "https://m.media-amazon.com/images/M/MV5BODM1MDU2NjY5NF5BMl5BanBnXkFtZTgwMDkxNTcwNjM@._V1_.jpg",
   },
   {
     id: 3,
@@ -30,11 +30,11 @@ const movies = [
   },
   {
     id: 4,
-    name: "War for the Planet of the Apes",
-    Date: 2017,
+    name: "breaking bad",
+    Date: 2008,
     description:
-      "Caesar's journey continues, as he and his fellow monkeys are forced - during this part - to fight a bloody and deadly war with an army of humans led by a ruthless colonel. He and the Colonel engage in an epic battle that will determine their fates and the future of the planet",
-    url: "https://upload.wikimedia.org/wikipedia/ar/3/36/%D8%AD%D8%B1%D8%A8_%D9%84%D8%A3%D8%AC%D9%84_%D9%83%D9%88%D9%83%D8%A8_%D8%A7%D9%84%D9%82%D8%B1%D8%AF%D8%A9.jpg",
+      "It is an American crime drama series written and produced by Vince Gilligan. Filmed and produced in Albuquerque, New Mexico. Stray Disorder tells the story of Walter White (Bryan Cranston), a high school chemistry teacher who is diagnosed with incurable lung cancer at the start of the series.",
+    url: "https://upload.wikimedia.org/wikipedia/ar/d/dc/%D9%85%D9%84%D8%B5%D9%82_%D8%B3%D9%84%D8%B3%D9%84%D8%A9_%D8%A7%D8%AE%D8%AA%D9%84%D8%A7%D9%84_%D8%B6%D8%A7%D9%84_%28%D9%85%D8%B3%D9%84%D8%B3%D9%84%29.jpeg",
   },
   {
     id: 5,
