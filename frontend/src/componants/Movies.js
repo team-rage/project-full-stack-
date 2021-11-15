@@ -7,37 +7,54 @@ export default function Movies() {
   const [searchArr, setSearchArr] = useState("");
 
   useEffect(async () => {
-    // here is the change
     const result = await axios.get("http://localhost:5000/movies");
     console.log(result.data);
     setData(result.data);
   }, []);
 
   const GoToMovie = (id) => {
-    history.push(`/Movie/${id}`)    
+    history.push(`/Movie/${id}`);
   };
   const searchTarget = (e) => {
     setSearchArr(e.target.value);
   };
-  const search = (movies) => {
-    let search1 = movies.filter((elem, i) => {
+  const search = () => {
+    const search1 = data.filter((elem) => {
       if (elem.name.toLowerCase().includes(searchArr.toLocaleLowerCase())) {
         return elem;
       }
+      console.log(elem)
     });
+    setData(search1)
     return search1;
   };
   return (
     <div className="movies">
-      {data.map((elem) => {
+      <input
+        placeholder="search"
+        onChange={(e) => {
+          searchTarget(e);
+        }}
+      />
+      <button
+        onClick={() => {
+          search();
+        }}
+      >
+        search
+      </button>
+      {data.map((elem,i) => {
         return (
           <div
             onClick={() => {
               GoToMovie(elem.id);
             }}
           >
+            
+     
             <h1>{elem.name}</h1>
             <img src={elem.url} />
+            
           </div>
         );
       })}
