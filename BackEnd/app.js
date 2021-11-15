@@ -77,38 +77,50 @@ const movies = [
     url: "https://upload.wikimedia.org/wikipedia/ar/7/77/Bleach_%28manga%29.jpg",
   },
 ];
+const like =[];
+
 app.get("/", (req, res) => {
   res.status(200);
   res.json("hello move");
 });
-app.post("/movies", (req, res) => {
-  const { name } = req.body;
-  movies.push({ name });
+app.post("/like/:id", (req, res) => {
+  const  id  = req.params.id;
+  console.log(id,"id")
+for( let i=0; i < movies.length; i++){
+if(movies[i].id ==id){
+like.push(movies[i])
+console.log(like)
+}  
+}
   res.status(200);
-  res.json({ name });
+  res.json(like );
 });
 app.get("/movies", (req, res) => {
   res.status(200);
   res.json(movies);
 });
-app.get("/movies/:id", (req, res) => {
-  const id = req.params.id;
-  for (let i = 0; i < movies.length; i++) {
-    if (movies[i].id == id) {
-      res.status(200);
-      res.json(movies[i]);
-    }
-  }
+app.get("/like", (req, res) => {
+  res.status(200);
+  res.json(like);
 });
-app.delete("/movies/:name", (req, res) => {
+// app.get("/movies/:id", (req, res) => {
+//   const id = req.body;
+//   for (let i = 0; i < movies.length; i++) {
+//     if (movies[i].id == id) {
+//       res.status(200);
+//       res.json(movies[i]);
+//     }
+//   }
+// });
+app.delete("/unlike/:name", (req, res) => {
   const remove = req.params.name;
-  for (let i = 0; i < movies.length; i++) {
-    if (movies[i].name === remove) {
-      movies.splice(i, 1);
+  for (let i = 0; i < like.length; i++) {
+    if (like[i].name === remove) {
+      like.splice(i, 1);
     }
   }
   res.status(200);
-  res.json(movies);
+  res.json(like);
 });
 app.get("/movies/:id", (req, res) => {
   const iid = req.params.id;

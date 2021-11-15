@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 export default function Movie() {
   const [allData, setAllData] = useState([]);
   const { id } = useParams();
-  console.log(useParams());
   useEffect(async () => {
     const res = await axios.get(`http://localhost:5000/movies/${id}`);
     console.log("hhhhh", res.data);
