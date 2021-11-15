@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import "./style.css"
 export default function Movies() {
   const history = useHistory();
+  const [searchArr, setSearchArr] = useState('');
   const [data, setData] = useState([]);
-  const [searchArr, setSearchArr] = useState("");
+ 
 
   useEffect(async () => {
-    // here is the change
     const result = await axios.get("http://localhost:5000/movies");
     console.log(result.data);
     setData(result.data);
@@ -19,14 +20,17 @@ export default function Movies() {
   const searchTarget = (e) => {
     setSearchArr(e.target.value);
   };
-  const search = (movies) => {
-    let search1 = movies.filter((elem, i) => {
-      if (elem.name.toLowerCase().includes(searchArr.toLocaleLowerCase())) {
+  const search = () => {
+    const search1 = data.filter((elem) => {
+      if (!elem.name.toLowerCase().includes(searchArr.toLocaleLowerCase())) {
         return elem;
+        
       }
+      console.log(elem)
     });
     return search1;
   };
+
   return (
     <div>
       <input
@@ -35,7 +39,15 @@ export default function Movies() {
           searchTarget(e);
         }}
       />
-      <button onClick={()=>{search()}}>search</button>
+      <button
+        onClick={() => {
+          search();
+        }}
+      >
+        search
+      </button>
+      {data.name&&data.url}
+      
       {data.map((elem) => {
         return (
           <div
@@ -44,8 +56,7 @@ export default function Movies() {
             }}
           >
             <p>{elem.name}</p>
-            {/* <p>{elem.date}</p>
-            <p>{elem.description}</p> */}
+        
             <img src={elem.url} />
           </div>
         );

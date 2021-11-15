@@ -17,6 +17,10 @@ export default function Home() {
       {movies.map((elem, i) => {
         return (
           <div key={i}>
+            {/* <p>{elem.name}</p>
+            <p>{elem.date}</p>
+            <p>{elem.description}</p>
+            <img src={elem.url} /> */}
           </div>
         );
       })}

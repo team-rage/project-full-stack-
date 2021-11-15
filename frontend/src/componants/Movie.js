@@ -14,6 +14,7 @@ export default function Movie() {
   const GoToMovie = (id) => {
     history.push(`/Movie/${id}`);
   };
+
   return (
     <div>
       {data.map((elem) => {
