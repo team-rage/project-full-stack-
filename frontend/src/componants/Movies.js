@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import {BsFillHeartFill} from "react-icons/bs"
 export default function Movies() {
   const history = useHistory();
+  // const favMovie = useHistory();
   const [data, setData] = useState([]);
   const [searchArr, setSearchArr] = useState("");
 
@@ -11,6 +13,15 @@ export default function Movies() {
     console.log(result.data);
     setData(result.data);
   }, []);
+
+  const fav = async (id)  =>{
+const res = await axios.post(`http://localhost:5000/like/${id}`);
+setData(res.data)
+console.log(res.data);
+ }
+  // const GoToFav = (like) => {
+  //   favMovie.push(`/like/${like}`);
+  // };
 
   const GoToMovie = (id) => {
     history.push(`/Movie/${id}`);
@@ -46,15 +57,16 @@ export default function Movies() {
       {data.map((elem,i) => {
         return (
           <div
-            onClick={() => {
-              GoToMovie(elem.id);
-            }}
+           
           >
             
      
             <h1>{elem.name}</h1>
-            <img src={elem.url} />
-            
+            <img  onClick={() => {
+              GoToMovie(elem.id);
+            }} src={elem.url} />
+            <BsFillHeartFill className="HEART"  onClick={()=>{fav(elem.id)}}/>
+          
           </div>
         );
       })}
