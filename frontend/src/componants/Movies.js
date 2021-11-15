@@ -22,17 +22,18 @@ export default function Movies() {
   };
   const search = () => {
     const search1 = data.filter((elem) => {
-      if (!elem.name.toLowerCase().includes(searchArr.toLocaleLowerCase())) {
+      if (elem.name.toLowerCase().includes(searchArr.toLocaleLowerCase())) {
         return elem;
         
       }
       console.log(elem)
     });
+    setData(search1)
     return search1;
   };
 
   return (
-    <div>
+    <div className="movies">
       <input
         placeholder="search"
         onChange={(e) => {
@@ -46,18 +47,18 @@ export default function Movies() {
       >
         search
       </button>
-      {data.name&&data.url}
-      
-      {data.map((elem) => {
+      {data.map((elem,i) => {
         return (
           <div
             onClick={() => {
               GoToMovie(elem.id);
             }}
           >
-            <p>{elem.name}</p>
-        
+            
+     
+            <h1>{elem.name}</h1>
             <img src={elem.url} />
+            
           </div>
         );
       })}

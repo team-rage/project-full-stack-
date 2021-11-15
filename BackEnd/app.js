@@ -69,7 +69,7 @@ const movies = [
     url: "https://cdn.vox-cdn.com/thumbor/nwvCgEEsVPtb4fUpoQ2bys6DMYc=/0x0:1600x959/1200x800/filters:focal(670x165:926x421)/cdn.vox-cdn.com/uploads/chorus_image/image/69260607/FunFilms_DBSBroly_Landing.0.jpg",
   },
   {
-    id: 0,
+    id: 9,
     name: "BLEACH",
     Date: 2001,
     description:
@@ -109,6 +109,15 @@ app.delete("/movies/:name", (req, res) => {
   }
   res.status(200);
   res.json(movies);
+});
+app.get("/movies/:id", (req, res) => {
+  const iid = req.params.id;
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].id == iid) {
+      res.status(200);
+      res.json(movies[i]);
+    }
+  }
 });
 const port = 5000;
 app.listen(port, () => {
