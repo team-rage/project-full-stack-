@@ -91,6 +91,15 @@ app.get("/movies", (req, res) => {
   res.status(200);
   res.json(movies);
 });
+app.get("/movies/:id", (req, res) => {
+  const id = req.params.id;
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].id == id) {
+      res.status(200);
+      res.json(movies[i]);
+    }
+  }
+});
 app.delete("/movies/:name", (req, res) => {
   const remove = req.params.name;
   for (let i = 0; i < movies.length; i++) {
