@@ -13,10 +13,10 @@ export default function Movies() {
   }, []);
 
   const GoToMovie = (id) => {
-    history.push(`/Movie/${id}`);
+    history.push(`/Movie/${id}`)    
   };
   return (
-    <div>
+    <div className="movies">
       {data.map((elem) => {
         return (
           <div
@@ -25,6 +25,7 @@ export default function Movies() {
             }}
           >
             <h1>{elem.name}</h1>
+            <img src={elem.url} />
           </div>
         );
       })}

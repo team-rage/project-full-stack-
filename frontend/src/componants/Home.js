@@ -14,6 +14,8 @@ export default function Home() {
       {movies.map((elem, i) => {
         return (
           <div key={i}>
+             <p>{elem.date}</p>
+
             <p>{elem.name}</p>
             <p>{elem.date}</p>
             <p>{elem.description}</p>

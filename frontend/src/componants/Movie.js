@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export default function Movie() {
-  const [move, setmove] = useState([]);
+  const [allData, setAllData] = useState([]);
+  const { id } = useParams();
+  console.log(useParams());
+  useEffect(async () => {
+    const res = await axios.get(`http://localhost:5000/movies/${id}`);
+    console.log("hhhhh", res.data);
+    setAllData(res.data);
+  }, []);
 
-  <div>
-    <h1>Welcome to Web Movies</h1>
-    {move.map((elem, i) => {
-      return (
-        <div key={i}>
-          <p>{elem.name}</p>
-          <p>{elem.date}</p>
-          <p>{elem.description}</p>
-          <img src={elem.url} />
-        </div>
-      );
-    })}
-  </div>;
+  return (
+    <div  clsassname="move">
+      <h1>{allData.name}</h1>
+      <h1>{allData.id}</h1>
+      <h1>{allData.description}</h1>
+      <h1>{allData.date}</h1>
+      <img src={allData.url} />
+    </div>
+  );
 }
