@@ -15,10 +15,11 @@ export default function Movie() {
   return (
     <div  clsassname="move">
       <h1>{allData.name}</h1>
+     
+      <img src={allData.url} />
       <h1>{allData.id}</h1>
       <h1>{allData.description}</h1>
       <h1>{allData.date}</h1>
-      <img src={allData.url} />
     </div>
   );
 }
