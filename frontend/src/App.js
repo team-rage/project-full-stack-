@@ -5,6 +5,7 @@ import Movie from "./componants/Movie";
 import Movies from "./componants/Movies";
 import Header from "./componants/Header";
 
+
 function App() {
   return (
     <div className="App">

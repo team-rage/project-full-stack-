@@ -18,12 +18,7 @@ export default function Home() {
       <hr />
       </div>
       
-      {movies.map((elem, i) => {
-        return (
-          <div key={i}>
-          </div>
-        );
-      })}
+     
     </div>
   );
 }

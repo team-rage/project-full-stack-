@@ -1,35 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
-export default function Movie() {
-  const history = useHistory();
-  const [data, setData] = useState([]);
+import { useParams } from "react-router-dom";
 
+export default function Movie() {
+  const [allData, setAllData] = useState([]);
+  const { id } = useParams();
+  console.log(useParams());
   useEffect(async () => {
-    const result = await axios.get("http://localhost:5000/movies");
-    console.log(result.data);
-    setData(result.data);
+    const res = await axios.get(`http://localhost:5000/movies/${id}`);
+    console.log("hhhhh", res.data);
+    setAllData(res.data);
   }, []);
 
-  const GoToMovie = (id) => {
-    history.push(`/Movie/${id}`);
-  };
   return (
-    <div>
-      {data.map((elem) => {
-        return (
-          <div
-            onClick={() => {
-              GoToMovie(elem.id);
-            }}
-          >
-            <p>{elem.name}</p>
-            <p>{elem.date}</p>
-            <p>{elem.description}</p>
-            <img src={elem.url} />
-          </div>
-        );
-      })}
+    <div  clsassname="move">
+      <h1>{allData.name}</h1>
+      <h1>{allData.id}</h1>
+      <h1>{allData.description}</h1>
+      <h1>{allData.date}</h1>
+      <img src={allData.url} />
     </div>
   );
 }

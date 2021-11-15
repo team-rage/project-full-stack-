@@ -14,7 +14,7 @@ export default function Movies() {
   }, []);
 
   const GoToMovie = (id) => {
-    history.push(`/Movie/${id}`);
+    history.push(`/Movie/${id}`)    
   };
   const searchTarget = (e) => {
     setSearchArr(e.target.value);
@@ -28,14 +28,7 @@ export default function Movies() {
     return search1;
   };
   return (
-    <div>
-      <input
-        placeholder="search"
-        onChange={(e) => {
-          searchTarget(e);
-        }}
-      />
-      <button onClick={()=>{search()}}>search</button>
+    <div className="movies">
       {data.map((elem) => {
         return (
           <div
@@ -43,9 +36,7 @@ export default function Movies() {
               GoToMovie(elem.id);
             }}
           >
-            <p>{elem.name}</p>
-            {/* <p>{elem.date}</p>
-            <p>{elem.description}</p> */}
+            <h1>{elem.name}</h1>
             <img src={elem.url} />
           </div>
         );
