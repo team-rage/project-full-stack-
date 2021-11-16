@@ -26,7 +26,7 @@ export default function Movie() {
         allowfullscreen
       ></iframe>
       <h1>{allData.id}</h1>
-      <h1>{allData.description}</h1>
+      <h1 className="description">{allData.description}</h1>
       <h1>{allData.date}</h1>
     </div>
   );

@@ -46,7 +46,7 @@ const movies = [
     Date: 2014,
     description:
       " Anime Series. Tatsumi sets out on a journey to help his poor village. When he's rescued by a band of assassins, he joins their fight against the corrupt government. Starring:Sora ",
-    url: "https://upload.wikimedia.org/wikipedia/ar/0/0e/A%C5%9Fk-%C4%B1_Memnu_%28TV_series%29.jpg",
+    url: "https://2.bp.blogspot.com/-ad6MqOTWGvQ/W_XrqZKvThI/AAAAAAAAYy4/yLNc58Sw1OoA0H172rd_545SC_oQC3vIACLcBGAs/s1600/%2523akameF1.jpg",
     video: "https://www.youtube.com/embed/sasgDq9jidk",
   },
   {
@@ -86,23 +86,23 @@ const movies = [
     video: "https://www.youtube.com/embed/ZzCh5cI9ylY",
   },
 ];
-const like =[];
+const like = [];
 
 app.get("/", (req, res) => {
   res.status(200);
   res.json("hello move");
 });
 app.post("/like/:id", (req, res) => {
-  const  id  = req.params.id;
-  console.log(id,"id")
-for( let i=0; i < movies.length; i++){
-if(movies[i].id ==id){
-like.push(movies[i])
-console.log(like)
-}  
-}
+  const id = req.params.id;
+  console.log(id, "id");
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].id == id) {
+      like.push(movies[i]);
+      console.log(like);
+    }
+  }
   res.status(200);
-  res.json(like );
+  res.json(like);
 });
 app.get("/movies", (req, res) => {
   res.status(200);
