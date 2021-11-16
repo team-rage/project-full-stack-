@@ -4,7 +4,7 @@ import Favorite from "./componants/Favorite";
 import Movie from "./componants/Movie";
 import Movies from "./componants/Movies";
 import Header from "./componants/Header";
-
+import LogIn from "./componants/LogIn"
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
       <Route exact path="/Favorite" component={Favorite} />;
       <Route exact path="/Movies" component={Movies} />
       <Route exact path="/Movie/:id" component={Movie} />
+      <Route exact path="/login" component={LogIn} />
     </div>
   );
 }
