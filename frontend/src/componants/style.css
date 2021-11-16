@@ -1,5 +1,5 @@
 body {
-  background-image: url(https://images.unsplash.com/photo-1636824701504-7e1897d74d37?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5OHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v462-n-130-textureidea_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9465282a2b0a375f4f5b120d7bbad882");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -9,7 +9,7 @@ body {
 }
 
 .App {
-  color: black;
+  color: white;
 }
 ul {
   list-style-type: none;
@@ -27,7 +27,7 @@ li {
 
 li a {
   display: block;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -45,13 +45,18 @@ li a:hover {
   margin: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  color: black;
+  color: white;
 }
-
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.inputSearch {
+  margin-right: 10px;
+}
 /* div children */
-
-.movies div {
-}
 
 /* div img */
 
@@ -68,5 +73,16 @@ li a:hover {
   color: red;
 }
 .description {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.274);
+  color: white;
+}
+.imgMove {
+  width: 250px;
+  height: 300px;
+  margin-right: 100px;
+}
+.video {
+  width: 650px;
+  height: 300px;
+  margin-left: 100px;
 }
