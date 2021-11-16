@@ -15,7 +15,7 @@ export default function Favorite() {
   const removeFav = async (id) => {
     const res = await axios.delete(`http://localhost:5000/unlike/${id}`);
     setremove(res.data);
-    
+
     console.log(res.data);
   };
 
@@ -25,7 +25,7 @@ export default function Favorite() {
         return (
           <div>
             <h1>{elem.name}</h1>
-            <img src={elem.url} />
+            <img className="iimg" src={elem.url} />
             <BsFillHeartFill
               className="HEART"
               onClick={() => {
