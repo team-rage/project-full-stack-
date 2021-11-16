@@ -16,7 +16,7 @@ export default function Movies() {
 
   const fav = async (id)  =>{
 const res = await axios.post(`http://localhost:5000/like/${id}`);
-setData(res.data)
+// setData(res.data)
 console.log(res.data);
  }
   // const GoToFav = (like) => {
