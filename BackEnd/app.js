@@ -121,11 +121,14 @@ app.get("/like", (req, res) => {
 //     }
 //   }
 // });
-app.delete("/unlike/:name", (req, res) => {
-  const remove = req.params.name;
+app.delete("/unlike/:id", (req, res) => {
+  const remove = req.params.id;
+  console.log(remove, "id");
   for (let i = 0; i < like.length; i++) {
-    if (like[i].name === remove) {
+    if (like[i].id == remove) {
       like.splice(i, 1);
+      
+      console.log(like, "like");
     }
   }
   res.status(200);
