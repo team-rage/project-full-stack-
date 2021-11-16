@@ -15,6 +15,7 @@ export default function Favorite() {
   const removeFav = async (id) => {
     const res = await axios.delete(`http://localhost:5000/unlike/${id}`);
     setremove(res.data);
+    
     console.log(res.data);
   };
 

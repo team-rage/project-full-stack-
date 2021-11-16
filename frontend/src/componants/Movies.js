@@ -56,6 +56,7 @@ console.log(res.data);
       </button>
       </div>
     <div className="movies">
+      
      
       {data.map((elem,i) => {
         return (
