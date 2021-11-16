@@ -14,7 +14,7 @@ export default function Movie() {
   return (
     <div clsassname="move">
       <h1>{allData.name}</h1>
-
+      <h1>{allData.date}</h1>
       <img src={allData.url} />
       <iframe
         width="560"
@@ -25,9 +25,7 @@ export default function Movie() {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <h1>{allData.id}</h1>
       <h1 className="description">{allData.description}</h1>
-      <h1>{allData.date}</h1>
     </div>
   );
 }
