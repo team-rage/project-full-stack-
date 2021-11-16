@@ -131,8 +131,8 @@ app.delete("/unlike/:id", (req, res) => {
 });
 app.get("/movies/:id", (req, res) => {
   const iid = req.params.id;
-  for (let i = 0; i < login.length; i++) {
-    if (login[i].id == iid) {
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].id == iid) {
       res.status(200);
       res.json(movies[i]);
     }

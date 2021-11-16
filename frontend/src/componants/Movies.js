@@ -64,13 +64,12 @@ console.log(res.data);
            
           >
             
-            <div className="movdiv">
             <h1>{elem.name}</h1>
             <img  onClick={() => {
               GoToMovie(elem.id);
             }} src={elem.url} />
             <BsFillHeartFill className="HEART"  onClick={()=>{fav(elem.id)}}/>
-            </div>
+    
           
           </div>
         );
