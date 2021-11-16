@@ -12,7 +12,6 @@ const movies = [
       "he film revolves around John Wick (Reeves), who is searching for the men who broke into his home, stole his luxury car and killed his puppy, which was the last gift from his recently deceased wife (Moynahan). Stahelski and David Leach directed the film together, but Stahelski was the only one among them credited with directing the mov",
     url: "https://upload.wikimedia.org/wikipedia/ar/7/77/%D9%81%D9%8A%D9%84%D9%85_%D8%AC%D9%88%D9%86_%D9%88%D9%8A%D9%83.jpg",
     video: "https://www.youtube.com/embed/C0BMx-qxsP4",
-    
   },
   {
     id: 2,
@@ -22,7 +21,6 @@ const movies = [
       "An American political drama series developed and produced by Beau Willimon and based on the British series of the same name, which in turn is based on a novel by Michael Dobbs. The series has been broadcast on Netflix since February 1, 2013, with its first season consisting of 13 episodes. Season two was released on February 4, 2014. Ten days before the second season aired, Netflix announced that the series had been renewed for a third season, which was released on February 27, 2015. House of Cards was renewed for a fourth season that premiered on March 4, 2016, and a fifth season that premiered on May 30, 2017.",
     url: "https://m.media-amazon.com/images/M/MV5BODM1MDU2NjY5NF5BMl5BanBnXkFtZTgwMDkxNTcwNjM@._V1_.jpg",
     video: "https://www.youtube.com/embed/SvSkxBYuoQY",
- 
   },
   {
     id: 3,
@@ -32,7 +30,6 @@ const movies = [
       "It is the title of the completed Japanese manga series written and illustrated by Masashi Kishimoto. The story revolves around the teenage ninja Naruto Uzumaki, who found himself shunned by the residents of his village because of the Kyuubi inside him, so he set his sights on getting the title of Hokage, the title given to the village leader and the strongest ninja in it, to gain the respect and recognition of everyone.",
     url: "https://2u.pw/n0Xr8",
     video: "https://www.youtube.com/embed/KePpQ8kAJnI",
-  
   },
   {
     id: 4,
@@ -90,7 +87,11 @@ const movies = [
   },
 ];
 const like = [];
-
+const users = [
+  { name: "othman", email: "othman@gmail.com", passWord:" 1234" },
+  { name: "saleh", email: "saleh@gmail.com", passWord:" 1234" },
+  { name: "hiji", email: "hiji@gmail.com", passWord: "1234" },
+];
 app.get("/", (req, res) => {
   res.status(200);
   res.json("hello move");
@@ -121,7 +122,7 @@ app.delete("/unlike/:id", (req, res) => {
   for (let i = 0; i < like.length; i++) {
     if (like[i].id == remove) {
       like.splice(i, 1);
-      
+
       console.log(like, "like");
     }
   }
@@ -130,13 +131,26 @@ app.delete("/unlike/:id", (req, res) => {
 });
 app.get("/movies/:id", (req, res) => {
   const iid = req.params.id;
-  for (let i = 0; i < movies.length; i++) {
-    if (movies[i].id == iid) {
+  for (let i = 0; i < login.length; i++) {
+    if (login[i].id == iid) {
       res.status(200);
       res.json(movies[i]);
     }
   }
 });
+
+app.post("/users", (req, res) => {
+  const email = req.body.email;
+  const passWord = req.body.passWord;
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].email == email && users[i].passWord == passWord) {
+      res.status(200);
+      res.json("login correct");
+    }
+  }
+  res.status(200).json("login falied");
+});
+
 const port = 5000;
 app.listen(port, () => {
   console.log("server is running");
