@@ -40,20 +40,23 @@ console.log(res.data);
     return search1;
   };
   return (
-    <div className="movies">
-      <input
+    <div className ="mainDiv" >
+       <div className="search">
+      <input className="inputSearch"
         placeholder="search"
         onChange={(e) => {
           searchTarget(e);
         }}
-      />
-      <button
+      /> <button
         onClick={() => {
           search();
         }}
       >
         search
       </button>
+      </div>
+    <div className="movies">
+     
       {data.map((elem,i) => {
         return (
           <div
@@ -70,6 +73,7 @@ console.log(res.data);
           </div>
         );
       })}
+    </div>
     </div>
   );
 }
