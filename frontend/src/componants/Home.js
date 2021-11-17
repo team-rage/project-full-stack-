@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./style.css"
+import "./style.css";
 export default function Home() {
   const [movies, setmovies] = useState([]);
   useEffect(async () => {
@@ -9,16 +9,12 @@ export default function Home() {
     setmovies(result.data);
   }, []);
 
-
   return (
     <div>
-     
-      <div  className="title">
-      <h1>Welcome to Web Movies</h1>
-      <hr />
+      <div className="title">
+        <h1>Welcome to Web Movies</h1>
+        <hr />
       </div>
-      
-     
     </div>
   );
 }

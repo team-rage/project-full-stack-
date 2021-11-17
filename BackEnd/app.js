@@ -88,8 +88,8 @@ const movies = [
 ];
 const like = [];
 const users = [
-  { name: "othman", email: "othman@gmail.com", passWord:" 1234" },
-  { name: "saleh", email: "saleh@gmail.com", passWord:" 1234" },
+  { name: "othman", email: "othman@gmail.com", passWord: " 1234" },
+  { name: "saleh", email: "saleh@gmail.com", passWord: " 1234" },
   { name: "hiji", email: "hiji@gmail.com", passWord: "1234" },
 ];
 app.get("/", (req, res) => {
@@ -131,8 +131,8 @@ app.delete("/unlike/:id", (req, res) => {
 });
 app.get("/movies/:id", (req, res) => {
   const iid = req.params.id;
-  for (let i = 0; i < login.length; i++) {
-    if (login[i].id == iid) {
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].id == iid) {
       res.status(200);
       res.json(movies[i]);
     }
