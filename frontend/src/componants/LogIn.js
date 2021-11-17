@@ -1,17 +1,24 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 export default function LogIn() {
   const [login, setlogin] = useState("");
   const [pas, setpas] = useState("");
+  const history = useHistory();
 
   const Login = async () => {
-      
-        const res = await axios.post("http://localhost:5000/users", {
-            email: login,
-            passWord: pas,
-          });
-          console.log(res.data);  
+    const res = await axios.post("http://localhost:5000/users", {
+      email: login,
+      passWord: pas,
+    });
+    console.log(res.data);
+    if (res.data === "login falied") {
+      alert("login failed");
+    } else {
+      history.push("/home");  
+    }
   };
+
   const email1 = (e) => {
     setlogin(e.target.value);
   };

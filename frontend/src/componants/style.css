@@ -13,9 +13,11 @@ body {
 }
 ul {
   list-style-type: none;
-  margin: 0;
+  margin: 30px;
   padding: 0;
   overflow: hidden;
+  text-align: center;
+  width: auto;
   /* background-color: rgb(226, 211, 211); */
 }
 

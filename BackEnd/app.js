@@ -98,8 +98,8 @@ const movies = [
 //
 const like = [];
 const users = [
-  { name: "othman", email: "othman@gmail.com", passWord:" 1234" },
-  { name: "saleh", email: "saleh@gmail.com", passWord:" 1234" },
+  { name: "othman", email: "othman@gmail.com", passWord: " 1234" },
+  { name: "saleh", email: "saleh@gmail.com", passWord: " 1234" },
   { name: "hiji", email: "hiji@gmail.com", passWord: "1234" },
 ];
 //
