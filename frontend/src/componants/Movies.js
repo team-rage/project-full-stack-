@@ -63,11 +63,11 @@ console.log(res.data);
           <div
            
           >
-            
-            <h1>{elem.name}</h1>
-            <img  onClick={() => {
+             <img  onClick={() => {
               GoToMovie(elem.id);
             }} src={elem.url} />
+            <h1>{elem.name}</h1>
+           
             <BsFillHeartFill className="HEART"  onClick={()=>{fav(elem.id)}}/>
     
           
