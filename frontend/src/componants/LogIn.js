@@ -15,7 +15,7 @@ export default function LogIn() {
     if (res.data === "login falied") {
       alert("login failed");
     } else {
-      history.push("/home");
+      history.push("/home");  
     }
   };
 
