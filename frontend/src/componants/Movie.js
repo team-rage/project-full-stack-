@@ -8,7 +8,10 @@ export default function Movie() {
   const { id } = useParams();
   const [comments, setComent] = useState([]);
   const { comment } = useParams();
-  const [input, setInput] = useState([]);
+
+  const [input, setInput] = useState("");
+
+
   useEffect(async () => {
     const res = await axios.get(`http://localhost:5000/movies/${id}`);
     console.log("move data", res.data);
@@ -18,6 +21,7 @@ export default function Movie() {
     );
     console.log("comment", result.data);
     setComent(result.data);
+    setInput(comment);
   }, []);
   const aditComment = async () => {
     const res = await axios.post(
@@ -29,6 +33,7 @@ export default function Movie() {
   };
   const chengeComment = (e) => {
     setInput(e.target.value);
+
   };
   return (
     <div clsassname="move">
