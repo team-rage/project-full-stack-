@@ -94,6 +94,33 @@ const movies = [
     video: "https://www.youtube.com/embed/ZzCh5cI9ylY",
     comment: [],
   },
+  {
+    id: 10,
+    name: "prison break",
+    Date: 2005,
+    description: "movei lujin",
+    url: "https://m.media-amazon.com/images/M/MV5BNDFmMzM3NzctZGE0MC00NGVmLTljZmUtYTNiZjA2ZTE4NjQwXkEyXkFqcGdeQXVyNzg3MDUyMzc@._V1_FMjpg_UX1000_.jpg",
+    video: "https://www.youtube.com/embed/AL9zLctDJaU",
+    comment: [],
+  },
+  {
+    id: 11,
+    name: "The Dark Knight",
+    Date: 2008,
+    description: "movei coatch Feras",
+    url: "https://upload.wikimedia.org/wikipedia/ar/thumb/6/69/%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%84%D9%85_%D9%86%D9%87%D9%88%D8%B6_%D9%81%D8%A7%D8%B1%D8%B3_%D8%A7%D9%84%D8%B8%D9%84%D8%A7%D9%85_%282012%29.jpg/260px-%D9%85%D9%84%D8%B5%D9%82_%D9%81%D9%84%D9%85_%D9%86%D9%87%D9%88%D8%B6_%D9%81%D8%A7%D8%B1%D8%B3_%D8%A7%D9%84%D8%B8%D9%84%D8%A7%D9%85_%282012%29.jpg",
+    video: "https://www.youtube.com/embed/LDG9bisJEaI",
+    comment: [],
+  },
+  {
+    id: 12,
+    name: "whiplash",
+    Date: 2014,
+    description: "movei coatch Hanan",
+    url: "https://www.arageek.com/wp-content/uploads/15398862981_818e2b386e_o.jpg",
+    video: "https://www.youtube.com/embed/HJrTYOyXHA0",
+    comment: [],
+  },
 ];
 //
 const like = [];
