@@ -6,28 +6,32 @@ import { useParams } from "react-router-dom";
 export default function Movie() {
   const [allData, setAllData] = useState([]);
   const { id } = useParams();
- const [comments, setComent] = useState([])
- const { comment } = useParams();
- const [input, setInput] = useState([])
+  const [comments, setComent] = useState([]);
+  const { comment } = useParams();
+  const [input, setInput] = useState("");
   useEffect(async () => {
     const res = await axios.get(`http://localhost:5000/movies/${id}`);
     console.log("move data", res.data);
     setAllData(res.data);
-    const result = await axios.get(`http://localhost:5000/movies/comment/${id}`);
+    const result = await axios.get(
+      `http://localhost:5000/movies/comment/${id}`
+    );
     console.log("comment", result.data);
     setComent(result.data);
+    setInput(comment);
   }, []);
-  const aditComment = async()=>{
-    const res = await axios.post(`http://localhost:5000/movies/addcomment/${id}`,
-    {comment:comments,
-    input:input
-    });
-    console.log("comment", res.data)
+  const aditComment = async () => {
+    const res = await axios.post(
+      `http://localhost:5000/movies/addcomment/${id}`,
+      { comment: input }
+    );
+    console.log("comment", res.data);
     setComent(res.data);
-  }
-  const chengeComment=(e)=>{
-    setInput(e.target.value)
-  }
+  };
+  const chengeComment = (e) => {
+    setInput(e.target.value);
+    console.log(setInput);
+  };
   return (
     <div clsassname="move">
       <h1>{allData.name}</h1>

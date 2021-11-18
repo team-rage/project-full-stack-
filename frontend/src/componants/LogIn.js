@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import "./style.css"
 export default function LogIn() {
   const [login, setlogin] = useState("");
   const [pas, setpas] = useState("");
@@ -26,28 +27,37 @@ export default function LogIn() {
     setpas(e.target.value);
   };
   return (
-    <div>
-      <input
+
+    <div className="all-login-w" >
+
+      <div className="wrapper-login">
+        <div id="inputdivLo" className='inputDivLo'><input className="INPUT"
         onChange={(e) => {
           email1(e);
         }}
         type="text"
         placeholder="Enter The email"
-      />
-      <input
+      /></div>
+      
+      <br />
+      <div  className='inputDivLo'><input className="INPUT"
         onChange={(e) => {
           pass(e);
         }}
+        
         type="password"
         placeholder="passWord"
-      />
-      <button
+      /></div>
+      
+      <br />
+      <button className="btn-login"
         onClick={() => {
           Login();
         }}
       >
         Login
       </button>
+      </div>
     </div>
   );
 }

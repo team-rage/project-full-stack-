@@ -16,14 +16,14 @@ ul {
   margin: 30px;
   padding: 0;
   overflow: hidden;
-  text-align: center;
+  /* text-align: center; */
   width: auto;
   /* background-color: rgb(226, 211, 211); */
 }
 
 li {
   display: inline-block;
-  margin-left: 50px;
+  margin-right: 50px;
   /* float: left; */
 }
 
@@ -92,5 +92,52 @@ li a:hover {
 .iimg {
   width: 250px;
 }
+.ss{
+border-radius: 50%;
+margin-top: auto;
+display: grid;
+}
+ .btn-login{
+background-color: aliceblue;
+  width: 130px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 60px;
+  padding: 5px;
+  cursor: pointer;
+  margin-left: 145px;
+  margin-top: 18px;
+ }
+ .wrapper-login {
+  box-shadow: 3px 3px 50px #8f9ca0;
+  width: 400px;
+ height: 400px;
+ }
 
+ .all-login-w {
+  
+   display: grid;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 50vh;
+   /* width: 1400px; */
+ }
+.INPUT{
+  width: 150px;
+  padding: 10px;
+  border-radius: 10px solid;
 
+  
+}
+
+.inputDivLo {
+  width: 150px;
+  margin: auto;
+  margin-top: 5px;
+
+}
+#inputdivLo{
+
+  margin-top: 160px;
+  }
