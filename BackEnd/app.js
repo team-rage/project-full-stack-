@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(cors());
-//movies 
+//movies
 const movies = [
   {
     id: 1,
@@ -136,20 +136,6 @@ app.get("/", (req, res) => {
   res.json("hello move");
 });
 //
-
-app.get("/movies", (req, res) => {
-  res.status(200);
-  res.json(movies);
-});
-//
-app.get("/movies/:id", (req, res) => {
-  const iid = req.params.id;
-  for (let i = 0; i < movies.length; i++) {
-    if (movies[i].id == iid) {
-      // يستقبل الفلم لحاله عن طريق الايدي 
-      res.status(200);
-      res.json(movies[i]);
-
 app.post("/movies/addcomment/:id", (req, res) => {
   const comment = req.body.comment;
   const id = req.params.id;
@@ -168,27 +154,29 @@ app.get("/movies/comment/:id", (req, res) => {
     if (movies[i].id == id) {
       res.status(200);
       res.json(movies[i].comment);
-
     }
   }
-});
-//like
-app.get("/like", (req, res) => {
-  res.status(200);
-  res.json(like);
 });
 //
 app.post("/like/:id", (req, res) => {
   const id = req.params.id;
-//  البرام تمرر الايليمينت عن طريق الايدي
   console.log(id, "id");
   for (let i = 0; i < movies.length; i++) {
     if (movies[i].id == id) {
-      // اذا الايدي الللي بالمصفوفة الرئيسيه يساوي الايدي اللي ارسلناه , اعمل بوش للايدي
       like.push(movies[i]);
       console.log(like);
     }
   }
+  res.status(200);
+  res.json(like);
+});
+//
+app.get("/movies", (req, res) => {
+  res.status(200);
+  res.json(movies);
+});
+//
+app.get("/like", (req, res) => {
   res.status(200);
   res.json(like);
 });
@@ -198,7 +186,6 @@ app.delete("/unlike/:id", (req, res) => {
   console.log(remove, "id");
   for (let i = 0; i < like.length; i++) {
     if (like[i].id == remove) {
-      // سوينا شرط وقلنا اذا الايدي اللي بالمصفوفة الجديدة وصار نفسه بالريموف , احذفه 
       like.splice(i, 1);
       console.log(like, "like");
     }
@@ -206,7 +193,17 @@ app.delete("/unlike/:id", (req, res) => {
   res.status(200);
   res.json(like);
 });
-//login
+//
+app.get("/movies/:id", (req, res) => {
+  const iid = req.params.id;
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].id == iid) {
+      res.status(200);
+      res.json(movies[i]);
+    }
+  }
+});
+//
 app.post("/users", (req, res) => {
   const email = req.body.email;
   const passWord = req.body.passWord;
@@ -218,28 +215,7 @@ app.post("/users", (req, res) => {
   }
   res.status(200).json("login falied");
 });
-//comment
-app.post("/movies/addcomment/:id", (req, res) => {
-  const comment = req.body.comment
-  const id = req.params.id
-  for ( let i=0; i< movies.length; i++){
-   if (movies[i].id == id){
-  movies[i].comment.push(comment)
-  res.status(200);
-  res.json(movies[i].comment);
-   }
-  }
- });
- //
- app.get("/movies/comment/:id", (req, res) => {
-   const id = req.params.id
-   for(let i=0;i<movies.length;i++){
-     if(movies[i].id == id){
-       res.status(200);
-     res.json(movies[i].comment);
-     }
-   }
- });
+//
 const port = 5000;
 app.listen(port, () => {
   console.log("server is running");
