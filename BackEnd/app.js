@@ -3,6 +3,7 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(cors());
+//movies 
 const movies = [
   {
     id: 1,
@@ -118,7 +119,7 @@ const movies = [
     Date: 2014,
     description: "movei coatch Hanan",
     url: "https://www.arageek.com/wp-content/uploads/15398862981_818e2b386e_o.jpg",
-    video: "https://www.youtube.com/embed/HJrTYOyXHA0",
+    video: "https://youtu.be/HJrTYOyXHA0",
     comment: [],
   },
 ];

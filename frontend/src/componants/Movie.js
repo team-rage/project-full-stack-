@@ -65,7 +65,7 @@ export default function Movie() {
         return (
           <div key={i}>
             <h1> {elem}</h1>
-            {elem.comment}
+            {/* {elem.comment} */}
             {/* {elem.input} */}
           </div>
         );
